@@ -23,6 +23,7 @@
         </processorPath>
         <module name="mentor-microservice" />
         <module name="user-microservice" />
+        <module name="session-microservice" />
         <module name="course-microservice" />
       </profile>
     </annotationProcessing>
@@ -31,7 +32,6 @@
       <module name="admin-microservice (2)" target="17" />
       <module name="admin-security" target="17" />
       <module name="security" target="17" />
-      <module name="session-microservice" target="17" />
       <module name="training-project-microservice" target="17" />
     </bytecodeTargetLevel>
   </component>
