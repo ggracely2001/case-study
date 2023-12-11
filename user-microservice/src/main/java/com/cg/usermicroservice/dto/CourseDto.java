@@ -16,7 +16,10 @@ import java.time.LocalDate;
         description = "Course_Dto Model info"
 )
 public class CourseDto {
-
+    private Long id;
+    @Schema(
+            description = "Course ID"
+    )
     private Long courseId;
     @Schema(
             description = "Course Name"

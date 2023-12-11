@@ -15,6 +15,10 @@ import lombok.Setter;
 )
 public class MentorDto {
 
+    private Long id;
+    @Schema(
+            description = "Mentor ID"
+    )
     private Long mentorId;
     @Schema(
             description = "Mentor Name"

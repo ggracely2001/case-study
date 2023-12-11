@@ -1,4 +1,5 @@
 package com.cg.mentormicroservice;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -28,8 +29,8 @@ class MentorServiceImplTest {
     @Test
     void getAllMentors_Test() {
         List<Mentor> mockMentors = Arrays.asList(
-                new Mentor(1L, "Mentor1", "Java", "Active"),
-                new Mentor(2L, "Mentor2", "Python", "Inactive")
+                new Mentor(1L,1L, "Mentor1", "Java", "Active"),
+                new Mentor(2L,2L, "Mentor2", "Python", "Inactive")
         );
         when(mentorRepository.findAll()).thenReturn(mockMentors);
         List<MentorDto> result = mentorService.getAllMentors();
@@ -40,7 +41,7 @@ class MentorServiceImplTest {
     @Test
     void getMentorById_Test() {
         Long mentorId = 1L;
-        Mentor mockMentor = new Mentor(mentorId, "Mentor1", "Java", "Active");
+        Mentor mockMentor = new Mentor(1L,1L, "Mentor1", "Java", "Active");
         when(mentorRepository.findByMentorId(mentorId)).thenReturn(mockMentor);
         MentorDto result = mentorService.getMentorById(mentorId);
         assertNotNull(result);
@@ -49,8 +50,8 @@ class MentorServiceImplTest {
 
     @Test
     void saveMentor_Test() {
-        MentorDto mentorDto = new MentorDto(1L, "Mentor1", "Java", "Active");
-        Mentor mockMentor = new Mentor(1L, "Mentor1", "Java", "Active");
+        MentorDto mentorDto = new MentorDto(1L,1L, "Mentor1", "Java", "Active");
+        Mentor mockMentor = new Mentor(1L,1L, "Mentor1", "Java", "Active");
         when(mentorRepository.save(any())).thenReturn(mockMentor);
         MentorDto result = mentorService.saveMentor(mentorDto);
         assertNotNull(result);
@@ -60,9 +61,9 @@ class MentorServiceImplTest {
     @Test
     void updateMentor_Test() {
         Long mentorId = 1L;
-        MentorDto updatedMentorDto = new MentorDto(1L, "UpdatedMentor", "UpdatedExpertise", "UpdatedStatus");
+        MentorDto updatedMentorDto = new MentorDto(1L,1L, "UpdatedMentor", "UpdatedExpertise", "UpdatedStatus");
 
-        Mentor existingMentor = new Mentor(mentorId, "Mentor1", "Java", "Active");
+        Mentor existingMentor = new Mentor(1L,mentorId, "Mentor1", "Java", "Active");
         when(mentorRepository.findById(mentorId)).thenReturn(Optional.of(existingMentor));
         when(mentorRepository.save(any())).thenReturn(existingMentor);
 

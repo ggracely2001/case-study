@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 
 public class CourseDto {
-
+    private Long id;
     private Long courseId;
     private String courseName;
     private String courseCode;

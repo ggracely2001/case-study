@@ -21,6 +21,7 @@ import java.time.LocalDateTime;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long courseId;
     private String courseName;
     private String courseCode;

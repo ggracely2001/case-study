@@ -15,6 +15,7 @@ import lombok.Setter;
 public class Mentor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long mentorId;
     @Column(nullable = false)
     private String mentorName;

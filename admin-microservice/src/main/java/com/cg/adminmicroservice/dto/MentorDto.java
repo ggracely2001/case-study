@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class MentorDto {
+    private Long id;
 
     private Long mentorId;
 
